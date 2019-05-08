@@ -1,0 +1,25 @@
+﻿@using Course.Data
+@model IEnumerable<Candidate>
+
+
+    <table class="table table-hover table-striped table-bordered" style="margin-top: 15px">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>View Candidate</th>
+        </tr>
+
+        @foreach (Candidate c in Model)
+        {
+        <tr>
+            <td>@c.FirstName</td>
+            <td>@c.LastName</td>
+            <td>@c.Email</td>
+            <td>@c.PhoneNumber</td>
+            <td><a href="/home/viewcandidate?id=@c.Id">View Candidate</a></td>
+        </tr>
+        }
+
+    </table>

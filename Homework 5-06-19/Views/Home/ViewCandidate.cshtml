@@ -1,0 +1,24 @@
+﻿@using Course.Data
+@model Candidate
+
+<div class="table-1 row col-md-6 col-md-offset-3 well" style="margin-top: 20px">
+    <input type="text" class="form-control" name="firstname" placeholder="First Name" value="@Model.FirstName" />
+    <br />
+    <input type="text" class="form-control" name="lastname" placeholder="Last Name" value="@Model.LastName" />
+    <br />
+    <input type="text" class="form-control" name="email" placeholder="Email" value="@Model.Email" />
+    <br />
+    <input type="text" class="form-control" name="phonenumber" placeholder="Phone Number" value="@Model.PhoneNumber" />
+    <br />
+    <textarea class="form-control" placeholder="Details" rows="5" name="details">value="@Model.Details"</textarea>
+    <br />
+    <button class="btn btn-primary" id="confirm" data-id="@Model.Id">Confirm</button>
+
+    <button class="btn btn-success" id="decline" data-id="@Model.Id">Decline</button>
+</div>
+
+
+@section Scripts{
+    <script src="~/js/index.js"></script>
+}
+

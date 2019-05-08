@@ -31,8 +31,10 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="AddForm">Add Candidate</a></li>
+                    <li><a asp-area="" asp-controller="Home" id="pending-count" asp-action="Pending">Pending(@ViewBag.Pending)</a></li>
+                    <li><a asp-area="" asp-controller="Home" id="confirmed-count" asp-action="Confirmed">Confirmed(@ViewBag.Confirmed)</a></li>
+                    <li><a asp-area="" asp-controller="Home" id="declined-count" asp-action="Declined">Declined(@ViewBag.Declined)</a></li>
                 </ul>
             </div>
         </div>
@@ -43,9 +45,6 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; 2019 - Homework_5_06_19</p>
-        </footer>
     </div>
 
     <environment include="Development">
@@ -70,5 +69,9 @@
     </environment>
 
     @RenderSection("Scripts", required: false)
+    @section Scripts{
+        <script src="~/js/index.js"></script>
+    }
+
 </body>
 </html>
